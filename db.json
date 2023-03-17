@@ -12,8 +12,8 @@
       "id": 1
     },
     {
-      "name": "Teste 2",
-      "budget": "5000",
+      "name": "Teste Atualização de projetos",
+      "budget": "1000",
       "category": {
         "id": "4",
         "name": "Planejamento"
