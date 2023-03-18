@@ -1,12 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import { parse, v4 as uuidv4} from 'uuid';
+
 import styles from './Project.module.css';
 
-import Loading from '../../layout/loading/Loading';
-import Container from '../../layout/container/Container';
-import ProjectForm from '../../layout/project/ProjectForm';
-import Message from '../../layout/message/Message';
+import Loading from '../../../layout/loading/Loading';
+import Container from '../../../layout/container/Container';
+import ProjectForm from '../projectForm/ProjectForm';
+import Message from '../../../layout/message/Message';
+import ServiceForm from '../projectService/ServiceForm';
 
 
 function Project(){
@@ -16,6 +19,7 @@ function Project(){
     const [showProjectForm, setShowProjectForm] = useState(false);
     const [message, setMessage] = useState("");
     const [type, setType] = useState(); 
+    const [showServiceForm, setShowServiceForm] = useState(false);
 
     useEffect(()=> {
         setTimeout(()=>{
@@ -30,13 +34,11 @@ function Project(){
         }, 500)
     }, [id])
 
-    function toggleProjectForm(){
-        setShowProjectForm(!showProjectForm);
-    }
 
     function editPost(project){
+        setMessage("");
         if(project.budget < project.cost){
-            setMessage("O custo não pode ser maior que o orçamento !");
+            setMessage("O orçamento não pode ser inferior ao custo!");
             setType("error")
             return false;
         }
@@ -53,6 +55,46 @@ function Project(){
             setShowProjectForm(false);
             setMessage("Projeto atualizado!");
             setType("success")
+
+        })).catch((err)=> console.log(err))
+    }
+
+    function toggleProjectForm(){
+        setShowProjectForm(!showProjectForm);
+    }
+
+    function toggleServiceForm(){
+        setShowServiceForm(!showServiceForm);
+    }
+
+    function createService(project){
+        setMessage("");
+
+        const lastService = project.services[project.services.length-1];
+        lastService.id = uuidv4();
+        const lastServiceCost = lastService.cost;
+        const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost);
+
+        if(newCost > parseFloat(project.budget)){
+            setMessage("Orçamento ultrapassado!");
+            setType("error");
+            project.services.pop();
+            return false;
+        }
+
+        project.cost = newCost;
+
+        fetch(`http://localhost:5000/projects/${project.id}`, {
+            method: 'PATCH',
+            headers:{
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(project),
+
+        }).then((resp)=> resp.json().then((data)=> {
+            console.log(data);
+            setMessage("Projeto atualizado!");
+            setType("success");
 
         })).catch((err)=> console.log(err))
     }
@@ -89,6 +131,24 @@ function Project(){
                                 </div>
                             )}
                         </div>
+                        <div className={styles.service_form_container}>
+                            <h2>Adicionar serviço</h2>
+                            <button className={styles.btn} onClick={toggleServiceForm}>
+                                {!showServiceForm ? "Adicionar serviço"  : "Fechar"}    
+                            </button>
+                            <div className={styles.project_info}>
+                                {showServiceForm && (
+                                    <ServiceForm 
+                                        handleSubmit={createService}
+                                        btnText="Adicionar serviço"
+                                        projectData={project}/>
+                                )}
+                            </div>
+                        </div>
+                        <h2>Serviços</h2>
+                            <Container customClass="start">
+                                <p>Itens de serviço</p>
+                            </Container>
                     </Container>
                 </div>
             ) : ( <Loading /> )}
