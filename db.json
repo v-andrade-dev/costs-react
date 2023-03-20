@@ -1,37 +1,52 @@
 {
   "projects": [
     {
-      "name": "Teste 1",
-      "budget": "1000",
+      "name": "Desenvolvimento de um software",
+      "budget": "500000",
       "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 450000,
+      "services": [
+        {
+          "name": "Colaboradores",
+          "cost": "100000",
+          "description": "Contratação de pessoal para inicio do projeto",
+          "id": "1853998e-b44e-46e3-918b-0457c1755ab7"
+        },
+        {
+          "name": "Levantamento de requisitos",
+          "cost": "50000",
+          "description": "Planejamento e execução das ferramentas de levantamento de requisitos",
+          "id": "70fb3a37-05ea-4a28-8727-72e4abede503"
+        },
+        {
+          "name": "Design",
+          "cost": "100000",
+          "description": "Construção do modelo de software, diagramas, tecnologias, definições.",
+          "id": "6af660ab-57e4-4b43-82fa-ea2b760bf9f5"
+        },
+        {
+          "name": "Implementação",
+          "cost": "50000",
+          "description": "Implementação em código do software",
+          "id": "5bb993a7-1b7e-4cbd-93a0-aa975a51d959"
+        },
+        {
+          "name": "Prototipo",
+          "cost": "50000",
+          "description": "Protótipo inicial do produto desenvolvido",
+          "id": "6b7dc397-1650-4598-87ae-1146ff8e9a64"
+        },
+        {
+          "name": "Testes",
+          "cost": "100000",
+          "description": "Testes do protótipo inicial implementado",
+          "id": "a9b81db9-1813-4ad4-8100-2688aa65ea45"
+        }
+      ],
       "id": 1
-    },
-    {
-      "name": "Teste Atualização de projetos",
-      "budget": "10000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 2
-    },
-    {
-      "name": "Teste 3",
-      "budget": "2000",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 3
     }
   ],
   "categories": [

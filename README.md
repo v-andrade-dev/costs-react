@@ -1,3 +1,13 @@
+# Projeto Costs
+Gerenciador de custos e orçamento de serviços dentro de projetos.
+
+## Desenvolvimento
+Projeto desenvolvido com React, utilizando hooks useState, useEffect, react-icons e react-router-dom. Utilizei o modulo json-server para simular o backend, executando o CRUD.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
