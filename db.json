@@ -29,7 +29,7 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 800,
+      "cost": 1800,
       "services": [
         {
           "name": "Serviço",
@@ -48,6 +48,18 @@
           "cost": "100",
           "description": "serviço xy",
           "id": "0b7a301c-4139-4c02-802d-b9070baa984f"
+        },
+        {
+          "name": "serviço 10",
+          "cost": "500",
+          "description": "sfrffw",
+          "id": "28b7b17b-c23c-4af5-98b7-41df06813bf9"
+        },
+        {
+          "name": "UX designer",
+          "cost": "500",
+          "description": "contratar um UX designer",
+          "id": "b2660ccd-c9be-4662-84cf-db373ce1608e"
         }
       ],
       "id": 3
