@@ -29,39 +29,8 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 1800,
-      "services": [
-        {
-          "name": "Serviço",
-          "cost": "500",
-          "description": "serviço x",
-          "id": "cbc1ad1b-8dbe-42a6-bc91-d2de3b80aabd"
-        },
-        {
-          "name": "Serviço",
-          "cost": "200",
-          "description": "serviço y",
-          "id": "df08202b-0fb6-498e-9e34-856c286835e9"
-        },
-        {
-          "name": "Serviço",
-          "cost": "100",
-          "description": "serviço xy",
-          "id": "0b7a301c-4139-4c02-802d-b9070baa984f"
-        },
-        {
-          "name": "serviço 10",
-          "cost": "500",
-          "description": "sfrffw",
-          "id": "28b7b17b-c23c-4af5-98b7-41df06813bf9"
-        },
-        {
-          "name": "UX designer",
-          "cost": "500",
-          "description": "contratar um UX designer",
-          "id": "b2660ccd-c9be-4662-84cf-db373ce1608e"
-        }
-      ],
+      "cost": 0,
+      "services": [],
       "id": 3
     }
   ],
