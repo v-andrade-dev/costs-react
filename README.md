@@ -4,6 +4,9 @@ Gerenciador de custos e orçamento de serviços dentro de projetos.
 ## Desenvolvimento
 Projeto desenvolvido com React, utilizando hooks useState, useEffect, react-icons e react-router-dom. Utilizei o modulo json-server para simular o backend, executando o CRUD.
 
+![costs](https://user-images.githubusercontent.com/99416788/226458873-628086b5-c4d0-4f6f-824f-cdf18619a08f.png)
+
+![costs3](https://user-images.githubusercontent.com/99416788/226459063-ae8d8ad1-48a7-47ab-afd0-353e843255d4.png)
 
 
 
